@@ -8,6 +8,7 @@ const passport = require('passport');
 const path = require('path');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session)
+const flash = require('connect-flash')
 
 // load config
 dotenv.config({path: './config/config.env'});
@@ -22,6 +23,7 @@ const app = express()
 // Body parser
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
+
 
 // logging with morgan
 if(process.env.NODE_ENV === 'development'){
@@ -48,6 +50,17 @@ app.use(session({
     store: new MongoStore({mongooseConnection: mongoose.connection})
     // cookie: {secure: true}
 }))
+
+// connect flash
+app.use(flash())
+
+// Global vars
+app.use((req, res, next) => {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    next()
+});
+
 
 // passport middleware
 app.use(passport.initialize())

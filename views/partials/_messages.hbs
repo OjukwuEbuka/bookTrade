@@ -4,3 +4,7 @@
     {{/each}} --}}
     <input type="hidden" name="errors" id="errors" value="{{errors}}">
 {{/if}}
+
+{{#if success_msg}}
+    <input type="hidden" name="success_msg" id="success_msg" value="{{success_msg}}">
+{{/if}}
