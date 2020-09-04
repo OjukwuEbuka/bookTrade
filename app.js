@@ -29,7 +29,15 @@ if(process.env.NODE_ENV === 'development'){
 }
 
 // Handlebars config
-app.engine('.hbs', exphbs({defaultLayout:'main', extname: '.hbs'}));
+// exphbs.registerHelper('tern', function(first, sec){return first ? first : sec})
+app.engine('.hbs', exphbs({
+    defaultLayout:'main', 
+    extname: '.hbs',
+    helpers: {
+        tern: (first, sec)=> first ? first : sec,
+        toast: (foo, msg, cls) => foo({html: msg, classes: cls}, 4000)
+    }
+}));
 app.set('view engine', '.hbs');
 
 // Sessions
@@ -52,7 +60,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Routes
 app.use('/', require('./routes/index'))
 app.use('/auth', require('./routes/auth'))
-app.use('/stories', require('./routes/stories'))
+app.use('/books', require('./routes/books'))
 
 const PORT = process.env.PORT || 3000
 

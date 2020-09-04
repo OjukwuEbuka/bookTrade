@@ -6,7 +6,7 @@ const Story = require('../models/Book');
 //@desc     Login/Landing page
 //@route    GET /
 router.get('/', ensureGuest, (req, res) => {
-    res.render('login', {
+    res.render('welcome', {
         layout: 'login'
     })
 })

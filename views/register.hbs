@@ -1,0 +1,60 @@
+<h3>
+    <i class="fas fa-book-reader"></i>
+    Books Trade
+</h3>
+
+{{!-- {{#if errors}}
+    {{toast M errors.msg 'red'}}
+{{/if}} --}}
+    {{> _messages}}
+
+
+<div class="section">
+    <p class="lead">Create public and private stories from your life</p>
+</div>
+<div class="divider"></div>
+<div class="section">
+    <form action="/auth/register" method="POST" >
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="firstName" 
+                    name="firstName" value="{{tern firstName '' }}">
+                <label for="firstName">First Name</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="lastName" 
+                    name="lastName" value="{{tern lastName '' }}">
+                <label for="lastName">Last Name</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="username" 
+                    name="username" value="{{tern username '' }}">
+                <label for="username">Username</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="password" 
+                    name="password" value="{{tern password '' }}">
+                <label for="password">Password</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="password2" 
+                    name="password2" value="{{tern password2 '' }}">
+                <label for="password2">Confirm Password</label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn green accent-3">Register</button>
+    </form>
+</div>

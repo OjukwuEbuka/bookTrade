@@ -1,6 +1,6 @@
 <h3>
     <i class="fas fa-book-reader"></i>
-    StoryBooks
+    Books Trade
 </h3>
 
 <div class="section">
@@ -8,7 +8,21 @@
 </div>
 <div class="divider"></div>
 <div class="section">
-    <a href="/auth/google" class="btn red darken-1">
-        <i class="fab fa-google left"></i>Login with Google
-    </a>
+    <form action="/auth/login" method="POST" >
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="username" name="username">
+                <label for="username">Username</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="password" id="password" name="password">
+                <label for="password">Password</label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn red darken-1">Login2</button>
+    </form>
 </div>
