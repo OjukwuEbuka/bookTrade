@@ -9,12 +9,14 @@ router.get('/add', ensureAuth, (req, res) => {
     res.render('books/add')
 })
 
+
 //@desc     Process add form
 //@route    POST /books
 router.post('/', ensureAuth, async (req, res) => {
     try {
         req.body.user = req.user.id;
         await Book.create(req.body)
+        req.flash('success_msg', 'You have a new book');
         res.redirect('/dashboard')
     } catch (error) {
         console.error(error)

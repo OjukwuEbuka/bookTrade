@@ -1,0 +1,49 @@
+<h3>Add Story</h3>
+<div class="row">
+    <form action="/books" method="POST" class="col s12" id="bookForm">
+        <div class="row">
+            <div class="col m6">
+                <div class="input-field">
+                    <input type="text" id="title" name="title">
+                    <label for="title">Title</label>
+                </div>
+            </div>
+
+            <div class="col m6">
+                <div class="input-field">
+                    <input type="text" id="author" name="author">
+                    <label for="status">Author</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col m6">
+                <div class="input-field">
+                    <input type="text" id="genre" name="genre">
+                    <label for="status">Genre</label>
+                </div>
+            </div>
+
+            <div class="col m6">
+                <div class="input-field">
+                    <input type="number" id="pages" name="pages">
+                    <label for="status">No of Pages</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class=" input-field">
+                <h5>Synopsis</h5>
+                <textarea name="synopsis" id="synopsis" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+    
+</div>

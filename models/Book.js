@@ -16,6 +16,13 @@ const BookSchema = new mongoose.Schema({
     },
     pages: {
         type: Number,
+    },
+    synopsis: {
+        type: String,
+        required: true
+    },
+    user: {
+        type: String,
         ref: 'User'
     },
     createdAt: {

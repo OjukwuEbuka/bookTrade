@@ -1,27 +1,22 @@
 <h6>Dashboard</h6>
 <h3>Welcome {{name}}</h3>
 <p>Here are your stories</p>
-{{#if stories}}
-    <table class="striped">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Date</th>
-                <th>Status</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each stories}}
-                <tr>
-                    <td><a href="/stories/{{_id}}">{{title}}</a></td>
-                    <td>{{createdAt}}</td>
-                    <td><span class="dash-status">{{status}}</span></td>
-                    <td></td>
-                </tr>
+{{> _messages}}
+
+{{#if books}}
+    <div class="">
+           
+            {{#each books}}
+                <div class="row">
+                    <h5>{{title}}</h5>
+                    <div class="col m6">Author: {{author}}</div>
+                    <div class="col m6">Genre: {{genre}}</div>
+                    <p><small>{{pages}} pages</small></p>
+                    {{synopsis}}
+                </div>
             {{/each}}
-        </tbody>
-    </table>
+
+    </div>
 {{else}}
-<p>You have not created any stories</p>
+<p>You have not added any book.</p>
 {{/if}}
